@@ -19,7 +19,7 @@ def input_students
         height = gets.chomp
         # add the student hash to the array
         students << {name: name, cohort: cohort.intern, hobbies: hobbies, cob: cob, height: height}
-        puts "Now we have #{students.count} students. Please enter the name of the next student or press return to quit"
+        puts "Now we have #{students.count} #{students.count == 1? "student" : "students"}. Please enter the name of the next student or press return to quit"
         # get another name from the user
         name = gets.chomp
     end 
@@ -45,7 +45,7 @@ end
 
 def print_by_cohort(students)
     cohort_month = []
-    puts "Enter the cohort you wish to view"
+    puts "Enter the cohort you wish to view or press return to exit"
     month = gets.chomp
     students.map do |student|
         if student[:cohort] == month.to_sym
@@ -57,7 +57,7 @@ end
 
 
 def print_footer(students)
-    puts "Overall, we have #{students.count} great students"
+    puts "Overall, we have #{students.count} great #{students.count == 1? "student" : "students"}"
 end
 
 students = input_students
