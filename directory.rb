@@ -12,7 +12,7 @@ def input_students
             cohort = "undisclosed"
         end
         puts "Please enter the student's hobbies"
-        hobbies = gets.chomp
+        hobbies = gets.delete("\n") # an alternative to .chomp
         puts "Please enter the student's country of birth"
         cob = gets.chomp
         puts "Please enter the students height in cm"
@@ -61,7 +61,6 @@ def print_footer(students)
 end
 
 students = input_students
-puts students
 print_header
 print_s(students)
 print_footer(students)
